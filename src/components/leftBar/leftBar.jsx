@@ -3,7 +3,7 @@ import "./leftBar.style.scss";
 const LeftBar = () => {
   return (
     <div className="container-navbar">
-      <h1>LeftBar</h1>
+      <h1>LeftBa1r</h1>
     </div>
   );
 };
