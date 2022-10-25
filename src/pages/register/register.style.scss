@@ -1,0 +1,79 @@
+.container-register {
+  height: 100vh;
+  width: 100%;
+  margin: auto;
+  background-color: rgb(200, 221, 256);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .card {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: white;
+    width: 50%;
+    border-radius: 5px;
+    overflow: hidden;
+    .left {
+      flex: 1;
+      background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
+        url("https://media.istockphoto.com/photos/login-and-pas…ection-and-secured-picture-id1271787791?s=612x612")
+          center;
+      background-size: cover;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      color: white;
+      h1 {
+        font-size: 50px;
+        line-height: 80px;
+      }
+      p {
+        font-size: 14px;
+      }
+      span {
+        font-size: 14px;
+      }
+      button.btn-register {
+        border: none;
+        cursor: pointer;
+        line-height: 30px;
+        width: 50%;
+        padding: 10px;
+        background-color: white;
+        color: rgb(209, 108, 240);
+        font-weight: bold;
+      }
+    }
+    .right {
+      flex: 1;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      justify-content: center;
+      h1 {
+        color: #555;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        input {
+          border: none;
+          border-bottom: 1px solid lightgray;
+          padding: 20px 10px;
+        }
+        button {
+          border: none;
+          width: 50%;
+          padding: 10px;
+          cursor: pointer;
+          background-color: rgb(217, 155, 217);
+          color: white;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
