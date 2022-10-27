@@ -6,10 +6,18 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
+import LightModeIcon from "@mui/icons-material/LightMode";
 import { Avatar, Stack } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./navBar.style.scss";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext";
+import { AuthContext } from "../../context/authContext";
+
 const NavBar = () => {
+  const { toggle, darkMode } = useContext(DarkModeContext);
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="container-navbar">
       <div className="left-nav">
@@ -17,7 +25,14 @@ const NavBar = () => {
           <span>S-Social</span>
         </Link>
         <HomeOutlinedIcon />
-        <DarkModeOutlinedIcon />
+        {darkMode ? (
+          <LightModeIcon onClick={toggle} style={{ cursor: "pointer" }} />
+        ) : (
+          <DarkModeOutlinedIcon
+            onClick={toggle}
+            style={{ cursor: "pointer" }}
+          />
+        )}
         <AppRegistrationOutlinedIcon />
         <div className="search-nav">
           <SearchOutlinedIcon />
@@ -31,12 +46,9 @@ const NavBar = () => {
         <LanguageOutlinedIcon />
         <div className="user-nav">
           <Stack direction="column">
-            <Avatar
-              alt="Remy Sharp"
-              src="https://media.istockphoto.com/photos/login-and-pas…ection-and-secured-picture-id1271787791?s=612x612"
-            />
+            <Avatar alt="ssonnguyen" src={currentUser.profilePic} />
           </Stack>
-          <span>SsonNguyen</span>
+          <span>ssonnguyen</span>
         </div>
       </div>
     </div>

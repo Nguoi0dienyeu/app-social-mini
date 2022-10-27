@@ -1,0 +1,14 @@
+.item {
+  .user {
+    position: relative;
+
+    .online {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: limegreen;
+      position: absolute;
+      top: 0;
+    }
+  }
+}

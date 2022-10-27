@@ -11,23 +11,31 @@ import LeftBar from "./components/leftBar/leftBar";
 import NavBar from "./components/navBar/navigation";
 import HomePages from "./pages/home/homepages";
 import Profile from "./pages/profile/profile";
+import "./styles.app.scss";
+import { useContext } from "react";
+import { DarkModeContext } from "./context/darkModeContext";
+import { AuthContext } from "./context/authContext";
 
 function App() {
-  const currentuser = true;
+  const { currentUser } = useContext(AuthContext);
+  const { darkMode } = useContext(DarkModeContext);
+  console.log("dark", darkMode);
   const Layout = () => {
     return (
-      <div className="layout">
+      <div className={`theme-${darkMode ? "dark" : "light"}`}>
         <NavBar />
         <div style={{ display: "flex" }}>
           <LeftBar />
-          <Outlet></Outlet>
-          <RightBar></RightBar>
+          <div style={{ flex: 6 }}>
+            <Outlet />
+          </div>
+          <RightBar />
         </div>
       </div>
     );
   };
   const ProtectRoute = ({ children }) => {
-    if (!currentuser) {
+    if (!currentUser) {
       return <Navigate to="/login" />;
     }
     return children;

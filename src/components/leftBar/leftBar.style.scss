@@ -1,0 +1,68 @@
+@import "../../styles.app.scss";
+
+.leftBar {
+  @include themify($themes) {
+    flex: 2;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    -webkit-box-shadow: 19px 28px 30px -16px rgba(161, 145, 161, 1);
+    -moz-box-shadow: 19px 28px 30px -16px rgba(161, 145, 161, 1);
+    box-shadow: 19px 28px 30px -16px rgba(161, 145, 161, 1);
+    background-color: themed("bg");
+    color: themed("textColor");
+    @include mobile {
+      display: none;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .containerBar {
+      padding: 20px;
+      hr {
+        border: none;
+        margin: 20px 0px;
+        background-color: themed("border");
+        height: 1px;
+      }
+      .menu {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        span {
+          font-size: 14px;
+        }
+        .userBar {
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          border-bottom: 1px solid themed("border");
+          img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+          span {
+            font-weight: bold;
+            font-size: 14px;
+          }
+        }
+        .item {
+          display: flex;
+          align-items: center;
+          img {
+            width: 30px;
+            height: 30px;
+            gap: 10px;
+          }
+          span {
+            font-size: 14px;
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}

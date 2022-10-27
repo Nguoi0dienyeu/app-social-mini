@@ -1,0 +1,67 @@
+@import "../../styles.app.scss";
+
+.rigthBar {
+  @include themify($themes) {
+    flex: 3;
+    position: sticky;
+    top: 70px;
+    height: calc(100vh - 70px);
+    overflow: scroll;
+    background-color: themed("bg");
+    color: themed("textColor");
+    @include mobile {
+      display: none;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .container-bar {
+      padding: 20px;
+      .item {
+        -webkit-box-shadow: 4px 2px 19px 3px rgba(232, 229, 232, 1);
+        -moz-box-shadow: 4px 2px 19px 3px rgba(232, 229, 232, 1);
+        box-shadow: 4px 2px 19px 3px rgba(232, 229, 232, 1);
+        padding: 20px;
+      }
+      .user {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px 0;
+        .userInfo {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          img {
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+          }
+          span {
+            font-weight: bold;
+          }
+        }
+
+        .btn-user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          button {
+            border: none;
+            cursor: pointer;
+            color: white;
+            padding: 2px;
+            span {
+              margin: 0px 5px 0 5px;
+              font-size: 12px;
+            }
+            &:last-child {
+              background-color: orange;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,11 @@
+import "./home.style.scss";
+import Post from "../../components/posts/post";
+import Stories from "../../components/stories/stories";
 const HomePages = () => {
   return (
-    <div>
-      <h1>HomePage</h1>
+    <div className="home">
+      <Stories />
+      <Post />
     </div>
   );
 };
